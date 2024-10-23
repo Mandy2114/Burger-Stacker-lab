@@ -1,15 +1,17 @@
+import Ingredient from './Ingredient.jsx'
 
-
-export const IngredientList = (props) => {
+const IngredientList = (props) => {
   return (
     <ul>
       {props.availableIngredients.map((ingredient, index) => (
-        <IngredientList
+        <Ingredient
           key={index}
           ingredient={ingredient}
-          addToburger={props.addToburger}
+          addToBurger={props.addToBurger}
         />
       ))};
     </ul>
   );
 };
+
+export default IngredientList

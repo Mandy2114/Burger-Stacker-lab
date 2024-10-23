@@ -1,6 +1,6 @@
+import Ingredient from "./Ingredient.jsx";
 
-
-export const BurgerStack = (props) => {
+const BurgerStack = (props) => {
   if (!props.stack.length)
     return (
       <ul>
@@ -10,14 +10,16 @@ export const BurgerStack = (props) => {
   
   return (
     <ul>
-      {props.stack.map((ingredient, index) => {
-        <ingredient
+      {props.stack.map((ingredient, index) => ( // implicit return (parentheis) vs. explicit (curly braces)
+        <Ingredient
           key={index}
           index={index}
           ingredient={ingredient}
           removeFromBurger={props.removeFromBurger}
         />
-      })}
+      ))}
     </ul>
   );
 };
+
+export default BurgerStack
